@@ -619,7 +619,7 @@ MicImage.addEventListener('mousedown', function(event) { // check all the possib
     //console.log(`Image was mousedowned! at x=${percx.toFixed(1)}, y= ${percy.toFixed(1)}, focus =${Focus}, ${DFDragging} , ${FDFocus}, ${IntDrag}`) ;
 });
 
-document.addEventListener('touchmove', (e) => ) {
+document.addEventListener('touchmove', (e) =>  {
   distanceY=mouseDownY-e.clientY; //always starts at 0,0 compared to where we clicked
   distanceX=mouseDownX-e.clientX;
   //console.log("mousemove "+xoffsetFD+", "+yoffsetFD+", "+cAS);
@@ -675,7 +675,7 @@ document.addEventListener('touchmove', (e) => ) {
     console.log("totInt "+totInt);
     SampleImage.style.filter = "brightness("+totInt+")";
   } 
-}
+});
 
 document.addEventListener('mousemove', (e) => { // depending on where the image was mousedowned will act on what was clicked and what the dragging means for that component
   distanceY=mouseDownY-e.clientY; //always starts at 0,0 compared to where we clicked
