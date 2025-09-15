@@ -366,7 +366,7 @@ MicImage.addEventListener('touchstart', function(event){  // equal to mousedown
   // this method gives the absolute pixel positions on the image whether or not zoomed in or not 
   // Return the final position only if the click was within the visible image
   //console.log(finalX.toFixed(1)+", "+finalY.toFixed(1));
-  console.log("Image was mousedowned! at x="+ percx.toFixed(0) +", y="+ percy.toFixed(0));
+  console.log("Image was touched! at x="+ percx.toFixed(0) +", y="+ percy.toFixed(0));
   
   // here we can set all locations to verify with the image
   // add all locations with zoom on condensor
@@ -634,7 +634,7 @@ document.addEventListener('touchmove', (e) =>  {
     FDImage.style.transform = "translateX("+xoffsetFD+"px) translateY("+yoffsetFD+"px) scale("+cAS+")";
     //FDImage.style.transform = "scale("+cAS+")"; this does not work as it always resets to the centre
   } else if (Focus){
-      //console.log(cFS+','+FS+',');
+    console.log('focussing ' +cFS+','+FS+',');
     cFS=Math.max(-10,Math.min(10,FS-distanceY/20)); // cannot be more than 10, and cannot be less than -10
     cFDF=Math.min(10,FDF+Math.abs(distanceY/50));
     SampleImage.style.filter = "blur("+Math.abs(cFS)+"px)";
