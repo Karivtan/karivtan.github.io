@@ -370,8 +370,9 @@ MicImage.addEventListener('touchstart', function(event){  // equal to mousedown
   
   // here we can set all locations to verify with the image
   // add all locations with zoom on condensor
-    mouseDownY=event.clientY;
-    mouseDownX=event.clientX;
+    mouseDownY=event.touches[0].clientY;
+    console.log(mouseDownY);
+    mouseDownX=event.touches[0].clientX;
     if (// the field diaphragm is clicked
          (percx < 1650 && percx > 1225 && percy < 2500 && percy > 2250 && MicImage.title == "ZeissLeft.png")||
          (percx < 1975 && percx > 1475 && percy < 2950 && percy > 2650 && MicImage.title == "ZeissFront.png")||
@@ -619,11 +620,11 @@ MicImage.addEventListener('mousedown', function(event) { // check all the possib
     //console.log(`Image was mousedowned! at x=${percx.toFixed(1)}, y= ${percy.toFixed(1)}, focus =${Focus}, ${DFDragging} , ${FDFocus}, ${IntDrag}`) ;
 });
 
-document.addEventListener('touchmove', (ev) =>  {
-  const e = ev.touches ? ev.touches[0] : ev;
+document.addEventListener('touchmove', (e) =>  {
+  const ev = e.touches ? e.touches[0] : e;
   console.log('touchdown '+mouseDownY);
-  distanceY=mouseDownY-e.clientY; //always starts at 0,0 compared to where we clicked
-  distanceX=mouseDownX-e.clientX;
+  distanceY=mouseDownY-ev.clientY; //always starts at 0,0 compared to where we clicked
+  distanceX=mouseDownX-ev.clientX;
   //console.log("mousemove "+xoffsetFD+", "+yoffsetFD+", "+cAS);
   //console.log(assignmentNumber);
   if (DFDragging) { // If the mouse is  being dragged we need to add the field diaphragm
