@@ -621,6 +621,7 @@ MicImage.addEventListener('mousedown', function(event) { // check all the possib
 
 document.addEventListener('touchmove', (ev) =>  {
   const e = ev.touches ? ev.touches[0] : ev;
+  console.log('touchdown '+mouseDownY);
   distanceY=mouseDownY-e.clientY; //always starts at 0,0 compared to where we clicked
   distanceX=mouseDownX-e.clientX;
   //console.log("mousemove "+xoffsetFD+", "+yoffsetFD+", "+cAS);
